@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        h1{
+            text-align: center;
+        }
+        .piano{
+            display: flex;
+            justify-content: center;
+        }
+
+        .key{
+            text-align: center;
+            border: 1px solid black;
+            width: 60px;
+            height: 200px;
+            margin: 20px;
+            box-shadow: black;
+
+
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h1>Piano keyboard</h1>
+
+    <div class="piano">
+        <div class="key" data-note="c">C</div>
+        <div class="key" data-note="d">D</div>
+        <div class="key" data-note="e">e</div>
+        <div class="key" data-note="f">f</div>
+        <div class="key" data-note="g">g</div>
+        <div class="key" data-note="a">a</div>
+        <div class="key" data-note="b">b</div>
+    </div>
+
+    <audio id="audio-c" src="./EventsJs_freesound_community-1-note-piano-104171 (1).mp3"></audio>
+    <audio id="audio-d" src="./EventsJs_freesound_community-do-80236 (1).mp3"></audio>
+    <audio id="audio-e" src="./EventsJs_freesound_community-f3-68847 (1).mp3"></audio>
+    <audio id="audio-f" src="./EventsJs_freesound_community-la-80237.mp3"></audio>
+    <audio id="audio-g" src="./EventsJs_freesound_community-piano-g-6200.mp3"></audio>
+    <audio id="audio-a" src="./EventsJs_freesound_community-mi-80239 (1).mp3"></audio>
+    <audio id="audio-b" src="./EventsJs_freesound_community-piano-76656.mp3"></audio>
+
+    <script>
+
+        const keys = document.querySelectorAll(".key")
+
+        console.log(keys)
+
+        keys.forEach( function(e){
+
+            const note = e.getAttribute("data-note")
+
+            const audio = document.getElementById("audio-"+note)
+
+            //actio - clickk
+
+            e.addEventListener("click", function(){
+                audio.currentTime = 0;
+                audio.play()
+            })
+            
+            //Mouse
+            e.addEventListener('mouseover',function(){
+                e.style.backgroundColor = "lightblue"
+            })
+
+            e.addEventListener('mouseout',function(){
+                e.style.backgroundColor = "white"
+            })
+        })
+
+        
+
+    </script>
+</body>
+</html>

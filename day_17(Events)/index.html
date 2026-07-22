@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    
+
+    <button id="btn">add to cart</button>
+    <p id="msg"></p>
+
+
+    <script>
+
+        const button = document.getElementById('btn')
+
+        const message =   document.getElementById("msg")
+    
+
+    //2. addEventListner('Type of Event',function(){ } )
+
+    //1. click 
+
+    button.addEventListener('click',function(){
+
+        message.textContent = "Product Added To Cart"
+
+    })
+
+         
+    </script>
+</body>
+</html>
